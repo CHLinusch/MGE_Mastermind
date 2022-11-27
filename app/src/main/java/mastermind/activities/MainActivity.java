@@ -9,10 +9,6 @@ import com.example.mastermind.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static Intent createIntent(Context context, String fromEmail) {
-        Intent intent = new Intent(context, MainActivity.class);
-        return intent;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

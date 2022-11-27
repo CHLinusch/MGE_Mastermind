@@ -31,3 +31,5 @@ This project aims for at least the following points:
 0.2: Mainscreeen, Strings (de+en)
 
 0.3: Layout Game
+
+0.4: Persistence

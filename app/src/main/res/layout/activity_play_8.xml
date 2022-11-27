@@ -9,7 +9,6 @@
         android:id="@+id/play_peg_sol_4"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginStart="20dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box_sol"
         app:layout_constraintStart_toEndOf="@+id/play_peg_sol_3"
