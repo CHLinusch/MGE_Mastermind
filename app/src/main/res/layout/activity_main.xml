@@ -7,12 +7,80 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/textView"
+        android:layout_width="366dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="13dp"
+        android:text="MASTERMIND"
+        android:textAlignment="center"
+        android:textAppearance="@style/GameTitle"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/main_repeatable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="133dp"
+        android:text="@string/main_repeat_colors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_language" />
+
+    <Button
+        android:id="@+id/main_continue"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/main_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/main_new"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="155dp"
+        android:text="@string/main_new_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_continue" />
+
+    <RadioGroup
+        android:id="@+id/main_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="126dp"
+        android:checkedButton="@id/main_english"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_new">
+
+        <RadioButton
+            android:id="@+id/main_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_language_en" />
+
+        <RadioButton
+            android:id="@+id/main_de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_language_de" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

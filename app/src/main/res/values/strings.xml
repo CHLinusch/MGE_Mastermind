@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mastermind</string>
+    <string name="main_continue">Continue</string>
+    <string name="main_new_game">New game</string>
+    <string name="main_repeat_colors">Repeatable colors</string>
+    <string name="main_language">Language</string>
+    <string name="main_language_en">English</string>
+    <string name="main_language_de">Deutsch</string>
+
 </resources>

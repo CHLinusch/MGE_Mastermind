@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GameTitle">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline1</item>
+    </style>
+</resources>
