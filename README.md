@@ -29,3 +29,5 @@ This project aims for at least the following points:
 0.1: Pegs, Game Evaluation Logic
 
 0.2: Mainscreeen, Strings (de+en)
+
+0.3: Layout Game
