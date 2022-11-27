@@ -33,3 +33,5 @@ This project aims for at least the following points:
 0.3: Layout Game
 
 0.4: Persistence
+
+0.4.1: Persistence in Activity

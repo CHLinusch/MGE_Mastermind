@@ -1,7 +1,8 @@
 package mastermind;
 import android.app.Application;
 import android.content.Context;
-//import ClassA
+
+import mastermind.services.SettingsSaveStateService;
 
 
 public class MastermindApplication extends Application {
@@ -9,6 +10,6 @@ public class MastermindApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Context context = getApplicationContext();
-        //ClassA.initialize(context)
+        SettingsSaveStateService.initialize(context);
     }
 }
