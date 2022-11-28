@@ -1,8 +1,5 @@
 package mastermind;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Gamestate {
     private int[][] placedPegs;
     private boolean repeatable;

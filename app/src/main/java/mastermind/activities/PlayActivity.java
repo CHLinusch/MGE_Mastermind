@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.mastermind.R;
+import com.lf.mastermind.R;
 
 import java.util.Arrays;
 
@@ -42,29 +42,13 @@ public class PlayActivity extends Activity {
     ImageView eval71, eval72, eval73, eval74;
     ImageView eval81, eval82, eval83, eval84;
 
-    ImageView[][] evals = new ImageView[][]{{eval11, eval12, eval13, eval14},
-            {eval21, eval22, eval23, eval24},
-            {eval31, eval32, eval33, eval34},
-            {eval41, eval42, eval43, eval44},
-            {eval51, eval52, eval53, eval54},
-            {eval61, eval62, eval63, eval64},
-            {eval71, eval72, eval73, eval74},
-            {eval81, eval82, eval83, eval84}
-    };
+    ImageView[][] evals;
     ImageView solp1, solp2, solp3, solp4;
-    ImageView[] solution_view = new ImageView[]{solp1, solp2, solp3, solp4};
+    ImageView[] solution_view;
 
 
-    Button[][] pegbuttons = new Button[][]{{btn_peg11, btn_peg12, btn_peg13, btn_peg14},
-            {btn_peg21, btn_peg22, btn_peg23, btn_peg24},
-            {btn_peg31, btn_peg32, btn_peg33, btn_peg34},
-            {btn_peg41, btn_peg42, btn_peg43, btn_peg44},
-            {btn_peg51, btn_peg52, btn_peg53, btn_peg54},
-            {btn_peg61, btn_peg62, btn_peg63, btn_peg64},
-            {btn_peg71, btn_peg72, btn_peg73, btn_peg74},
-            {btn_peg81, btn_peg82, btn_peg83, btn_peg84}
-    };
-    Button[] basebuttons = new Button[]{basepeg0, basepeg1, basepeg2, basepeg3, basepeg4, basepeg5};
+    Button[][] pegbuttons;
+    Button[] basebuttons;
 
     Peg[][] pegs = new Peg[9][4];
     Peg[] basepegs = new Peg[6];
@@ -86,7 +70,7 @@ public class PlayActivity extends Activity {
 
         int[] solution = gamestate.getPlacedPegs()[8];
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            if (solution == new int[]{6, 6, 6, 6}){
+            if (Arrays.equals(solution, new int[]{6, 6, 6, 6})){
                 gameLogic = new GameLogic( gamestate.isRepeatable());
             }else {
                 gameLogic = new GameLogic(solution, gamestate.isRepeatable());
@@ -95,25 +79,11 @@ public class PlayActivity extends Activity {
 
         active_row = 0;
         int[][] pegs_ints = gamestate.getPlacedPegs();
-        for (int i = 1; i < pegs_ints.length -1; i++){
+        for (int i = 0; i < pegs_ints.length -1; i++){
             if (Arrays.equals(pegs_ints[i], new int[]{6,6,6,6}))
             {
                 active_row = i;
                 break;
-            }
-        }
-        //set pegs from gamestate
-        for(int i = 0; i < pegs.length-1; i++){
-            for (int j = 0; j < 4; j++){
-                int color = pegs_ints[i+1][j];
-                if (i == active_row){
-                    if(color != 6){
-                    pegs[i][j] = new Peg(Mastermind.pPegs[color], true);
-                    }
-                }else{
-                    pegs[i][j] = new Peg(Mastermind.pPegs[color], false);
-                }
-                setPeg_element(i+1, j, color);
             }
         }
 
@@ -125,18 +95,74 @@ public class PlayActivity extends Activity {
         basepeg4 =  findViewById(R.id.play_peg_base_5);
         basepeg5 =  findViewById(R.id.play_peg_base_6);
 
+        basebuttons = new Button[]{basepeg0, basepeg1, basepeg2, basepeg3, basepeg4, basepeg5};
+
         solp1 = findViewById(R.id.play_peg_sol_1);
         solp2 = findViewById(R.id.play_peg_sol_2);
         solp3 = findViewById(R.id.play_peg_sol_3);
         solp4 = findViewById(R.id.play_peg_sol_4);
+
+        solution_view = new ImageView[]{solp1, solp2, solp3, solp4};
 
 
 
 
         for(int i = 0; i < basebuttons.length; i++){
             basebuttons[i].setOnClickListener(onClickListener_base);
-            basepegs[i] = new Peg(Mastermind.pPegs[i], true);
+            basepegs[i] = new Peg(i, true);
         }
+
+        eval11 = findViewById(R.id.play_peg_eval1_1);
+        eval12 = findViewById(R.id.play_peg_eval1_2);
+        eval13 = findViewById(R.id.play_peg_eval1_3);
+        eval14 = findViewById(R.id.play_peg_eval1_4);
+
+        eval21 = findViewById(R.id.play_peg_eval2_1);
+        eval22 = findViewById(R.id.play_peg_eval2_2);
+        eval23 = findViewById(R.id.play_peg_eval2_3);
+        eval24 = findViewById(R.id.play_peg_eval2_4);
+
+        eval31 = findViewById(R.id.play_peg_eval3_1);
+        eval32 = findViewById(R.id.play_peg_eval3_2);
+        eval33 = findViewById(R.id.play_peg_eval3_3);
+        eval34 = findViewById(R.id.play_peg_eval3_4);
+
+        eval41 = findViewById(R.id.play_peg_eval4_1);
+        eval42 = findViewById(R.id.play_peg_eval4_2);
+        eval43 = findViewById(R.id.play_peg_eval4_3);
+        eval44 = findViewById(R.id.play_peg_eval4_4);
+
+        eval51 = findViewById(R.id.play_peg_eval5_1);
+        eval52 = findViewById(R.id.play_peg_eval5_2);
+        eval53 = findViewById(R.id.play_peg_eval5_3);
+        eval54 = findViewById(R.id.play_peg_eval5_4);
+
+        eval61 = findViewById(R.id.play_peg_eval6_1);
+        eval62 = findViewById(R.id.play_peg_eval6_2);
+        eval63 = findViewById(R.id.play_peg_eval6_3);
+        eval64 = findViewById(R.id.play_peg_eval6_4);
+
+        eval71 = findViewById(R.id.play_peg_eval7_1);
+        eval72 = findViewById(R.id.play_peg_eval7_2);
+        eval73 = findViewById(R.id.play_peg_eval7_3);
+        eval74 = findViewById(R.id.play_peg_eval7_4);
+
+        eval81 = findViewById(R.id.play_peg_eval8_1);
+        eval82 = findViewById(R.id.play_peg_eval8_2);
+        eval83 = findViewById(R.id.play_peg_eval8_3);
+        eval84 = findViewById(R.id.play_peg_eval8_4);
+
+        evals = new ImageView[][]{{eval11, eval12, eval13, eval14},
+                {eval21, eval22, eval23, eval24},
+                {eval31, eval32, eval33, eval34},
+                {eval41, eval42, eval43, eval44},
+                {eval51, eval52, eval53, eval54},
+                {eval61, eval62, eval63, eval64},
+                {eval71, eval72, eval73, eval74},
+                {eval81, eval82, eval83, eval84}
+        };
+
+
 
         btn_peg11 =  findViewById(R.id.play_peg_box1_1);
         btn_peg12 =  findViewById(R.id.play_peg_box1_2);
@@ -178,11 +204,42 @@ public class PlayActivity extends Activity {
         btn_peg83 =  findViewById(R.id.play_peg_box8_3);
         btn_peg84 =  findViewById(R.id.play_peg_box8_4);
 
+       pegbuttons = new Button[][]{{btn_peg11, btn_peg12, btn_peg13, btn_peg14},
+                {btn_peg21, btn_peg22, btn_peg23, btn_peg24},
+                {btn_peg31, btn_peg32, btn_peg33, btn_peg34},
+                {btn_peg41, btn_peg42, btn_peg43, btn_peg44},
+                {btn_peg51, btn_peg52, btn_peg53, btn_peg54},
+                {btn_peg61, btn_peg62, btn_peg63, btn_peg64},
+                {btn_peg71, btn_peg72, btn_peg73, btn_peg74},
+                {btn_peg81, btn_peg82, btn_peg83, btn_peg84}
+        };
+
+
         for (Button[] pegbutton : pegbuttons) {
             for (Button button : pegbutton) {
                 button.setOnClickListener(onClickListener_ppeg);
             }
         }
+
+        //set pegs from gamestate
+        for(int i = 0; i < pegs.length-1; i++){
+            for (int j = 0; j < pegs[i].length;j++){
+                int color = pegs_ints[i][j];
+                if (i == active_row){
+                    if(color != 6){
+                        pegs[i][j] = new Peg(color, true);
+                    }
+                    else{
+                        pegs[i][j] = new Peg(color, false);
+                    }
+                }else{
+                    pegs[i][j] = new Peg(color, false);
+                }
+                setPeg_element(i, j, color);
+            }
+        }
+            pegs[8]=gameLogic.getSolution();
+
 
     }
 
@@ -190,7 +247,7 @@ public class PlayActivity extends Activity {
 
     @SuppressLint("NonConstantResourceId")
     private final View.OnClickListener onClickListener_base = v -> {
-        if (active_row != 9) {
+        if (active_row != 9 ) {
             switch (v.getId()) {
                 case R.id.play_peg_base_1:
                     placePeg(basepegs[0], active_row);
@@ -217,12 +274,19 @@ public class PlayActivity extends Activity {
 
 
     private void placePeg(Peg peg, int row) {
-        for (int i = 0; i < pegs[row].length; i++){
-            if (!pegs[row][i].isActive()){
-                pegs[row][i] = new Peg(peg.getpColor(), true);
+        if(gamestate.isRepeatable() || peg.isActive()) {
+            for (int i = 0; i < pegs[row].length; i++) {
+                if (!pegs[row][i].isActive()) {
+                    pegs[row][i] = new Peg(peg.getpColor(), true);
+                    setPeg_element(row, i, peg.getpColor());
+                    if(!gamestate.isRepeatable()){
+                        peg.setActive(false);
+                    }
+                    break;
+                }
             }
+            checkevalRow(row);
         }
-        checkevalRow(row);
     }
 
     private void checkevalRow(int row){
@@ -244,8 +308,11 @@ public class PlayActivity extends Activity {
         }
         active_row++;
         SettingsSaveStateService.saveGame(pegsToString(), gamestate.isRepeatable()?"true":"false");
-        if (active_row == pegs.length){
+        if (active_row == pegs.length-1){
             gameLost();
+        }
+        for(Peg peg : basepegs){
+            peg.setActive(true);
         }
     }
 
@@ -293,7 +360,7 @@ public class PlayActivity extends Activity {
             int id = v.getId();
             int row = -1;
             int column = -1;
-            for (int i = 0; i<pegs.length; i++){
+            for (int i = 0; i<pegs.length-1; i++){
                 for (int j = 0; j<pegs[i].length;j++){
                     if (pegbuttons[i][j].getId() == id){
                         row = i;

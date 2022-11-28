@@ -1,6 +1,6 @@
 package mastermind;
 
-import com.example.mastermind.R;
+import com.lf.mastermind.R;
 
 public class Mastermind {
     static final int BLUE = 0, GREEN = 1, RED = 2, BROWN = 3, YELLOW = 4, ORANGE = 5, GREY = 6,

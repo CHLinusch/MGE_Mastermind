@@ -9,6 +9,7 @@
         android:id="@+id/play_peg_sol_4"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box_sol"
         app:layout_constraintStart_toEndOf="@+id/play_peg_sol_3"
@@ -321,10 +322,10 @@
         android:id="@+id/play8_box_sol"
         android:layout_width="316dp"
         android:layout_height="63dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="76dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/play8_box8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rectangle"
         tools:srcCompat="@drawable/rectangle" />
 

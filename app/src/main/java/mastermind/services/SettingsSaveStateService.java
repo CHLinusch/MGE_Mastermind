@@ -3,8 +3,6 @@ package mastermind.services;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import mastermind.Peg;
-
 public class SettingsSaveStateService {
     private static final String FILE_NAME = "mastermind.preferences";
     private static final String SAVESTATE_KEY = "save";

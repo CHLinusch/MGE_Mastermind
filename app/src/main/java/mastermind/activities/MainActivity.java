@@ -1,5 +1,4 @@
 package mastermind.activities;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +7,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-import com.example.mastermind.R;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.lf.mastermind.R;
 import mastermind.services.SettingsSaveStateService;
 
 public class MainActivity extends AppCompatActivity {

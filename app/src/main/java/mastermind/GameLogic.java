@@ -17,13 +17,18 @@ public class GameLogic {
         repeatable = repeate;
         int[] usedPegs = new int[0];
         for (int i = 0; i < PEGS_PER_ROW; i++) {
-            int next_peg_nr = (int) Math.random() * PEG_NR;
+            boolean skip = false;
+            int next_peg_nr = (int) (Math.random() * PEG_NR);
             if (!repeate) {
-                if (Arrays.stream(usedPegs).anyMatch(k -> k == next_peg_nr)) {
-                    i--;
-                    continue;
+                for (int j = 0; j<i; j++) {
+                    if (solution[j].getpColor() == next_peg_nr) {
+                        i--;
+                        skip = true;
+                        break;
+                    }
                 }
             }
+            if (skip) continue;
             solution[i] = new Peg(next_peg_nr);
         }
 
@@ -31,7 +36,7 @@ public class GameLogic {
     public GameLogic(int[] sol, boolean repeat){
         repeatable = repeat;
         for (int i = 0; i < sol.length; i++){
-            solution[i]=new Peg(Mastermind.pPegs[sol[i]]);
+            solution[i]=new Peg(sol[i]);
         }
     }
 
@@ -39,7 +44,7 @@ public class GameLogic {
         int[] black_white = {0, 0};
         boolean[] used = new boolean[pegs.length];
         for (int i = 0; i < pegs.length; i++) {
-            if (solution[i].isActive() && pegs[i] == solution[i]) {
+            if (solution[i].isActive() &&  solution[i].equals(pegs[i])) {
                 black_white[0] += 1;
                 solution[i].setActive(false);
                 used[i]=true;
@@ -48,7 +53,7 @@ public class GameLogic {
         for (int i = 0; i < pegs.length; i++) {
             if (used[i] == false) {
                 for (int j = 0; j < pegs.length; j++) {
-                    if (solution[j].isActive() && pegs[i] == solution[j]) {
+                    if (solution[j].isActive() &&solution[j].equals(pegs[i])) {
                         black_white[1] += 1;
                         solution[j].setActive(false);
                         used[i] = true;
