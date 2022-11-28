@@ -12,7 +12,7 @@ public class GameLogic {
     private final Peg[] solution = new Peg[PEGS_PER_ROW];
     private final boolean repeatable;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     public GameLogic(boolean repeate) {
         repeatable = repeate;
         int[] usedPegs = new int[0];

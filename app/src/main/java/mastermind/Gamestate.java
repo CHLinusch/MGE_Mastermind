@@ -1,5 +1,7 @@
 package mastermind;
 
+import java.util.Objects;
+
 public class Gamestate {
     private int[][] placedPegs;
     private boolean repeatable;
@@ -16,7 +18,7 @@ public class Gamestate {
             }
         }
 
-        if (rep == "true"){
+        if ("true".equals(rep)){
             repeatable = true;
         }
         else{

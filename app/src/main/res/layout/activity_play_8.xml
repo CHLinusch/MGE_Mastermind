@@ -1168,4 +1168,17 @@
         app:layout_constraintStart_toEndOf="@+id/play_peg_sol_3"
         app:srcCompat="@drawable/transparentpeg" />
 
+    <Button
+        android:id="@+id/play_restart"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="9dp"
+        android:backgroundTint="#00FFFFFF"
+        app:icon="@drawable/restart"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/play8_box_sol"
+        app:layout_constraintStart_toEndOf="@+id/play8_box_sol"
+        app:strokeColor="#000000"
+        app:strokeWidth="3dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
