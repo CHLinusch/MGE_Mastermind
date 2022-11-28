@@ -35,3 +35,7 @@ This project aims for at least the following points:
 0.4: Persistence
 
 0.4.1: Persistence in Activity
+
+0.5: Layout, Button/Viewmapping
+
+0.6 A lot of bugfixes
