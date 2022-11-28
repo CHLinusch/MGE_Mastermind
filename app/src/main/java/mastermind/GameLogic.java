@@ -24,35 +24,45 @@ public class GameLogic {
                     continue;
                 }
             }
-            solution[i] = new Peg(Mastermind.sPegs[next_peg_nr]);
+            solution[i] = new Peg(next_peg_nr);
         }
 
     }
+    public GameLogic(int[] sol, boolean repeat){
+        repeatable = repeat;
+        for (int i = 0; i < sol.length; i++){
+            solution[i]=new Peg(Mastermind.pPegs[sol[i]]);
+        }
+    }
 
-    public int[] evaluateBW(int[] guess) {
+    public int[] evaluateBW(Peg[] pegs) {
         int[] black_white = {0, 0};
-        for (int i = 0; i < PEGS_PER_ROW; i++) {
-            if (solution[i].isPickable() && guess[i] == solution[i].getpColor()) {
+        boolean[] used = new boolean[pegs.length];
+        for (int i = 0; i < pegs.length; i++) {
+            if (solution[i].isActive() && pegs[i] == solution[i]) {
                 black_white[0] += 1;
-                solution[i].setPickable(false);
-                guess[i] = -1;
-
+                solution[i].setActive(false);
+                used[i]=true;
             }
         }
-        for (int i = 0; i < PEGS_PER_ROW; i++) {
-            if (guess[i] != -1) {
-                for (int j = 0; j < PEGS_PER_ROW; j++) {
-                    if (solution[j].isPickable() && guess[i] == solution[j].getpColor()) {
+        for (int i = 0; i < pegs.length; i++) {
+            if (used[i] == false) {
+                for (int j = 0; j < pegs.length; j++) {
+                    if (solution[j].isActive() && pegs[i] == solution[j]) {
                         black_white[1] += 1;
-                        solution[j].setPickable(false);
-                        guess[i] = -1;
+                        solution[j].setActive(false);
+                        used[i] = true;
                     }
                 }
             }
         }
         for (int i = 0; i < PEGS_PER_ROW; i++) {
-            solution[i].setPickable(true);
+            solution[i].setActive(true);
         }
         return black_white;
+    }
+
+    public Peg[] getSolution(){
+        return solution;
     }
 }
