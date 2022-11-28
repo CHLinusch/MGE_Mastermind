@@ -6,17 +6,16 @@ public class Gamestate {
 
     public Gamestate(String saveState, String rep){
         String[] boxStates = saveState.split(" ");
-        if (boxStates.length != 9){
-            placedPegs = new int[][]{{6,6,6,6},{6,6,6,6},{6,6,6,6},{6,6,6,6},
-                    {6,6,6,6},{6,6,6,6},{6,6,6,6},{6,6,6,6},{6,6,6,6}};
-        }
-        else{
+        placedPegs = new int[][]{{6,6,6,6},{6,6,6,6},{6,6,6,6},{6,6,6,6},
+                {6,6,6,6},{6,6,6,6},{6,6,6,6},{6,6,6,6},{6,6,6,6}};
+        if (boxStates.length == 9){
             for (int i = 0; i < boxStates.length; i++){
-                  for (int j = 0; j < boxStates[i].length(); j++){
-                       placedPegs[i][j] = Integer.valueOf(boxStates[i].charAt(j));
-                  }
+                for (int j = 0; j < boxStates[i].length(); j++){
+                    placedPegs[i][j] = Character.getNumericValue(boxStates[i].charAt(j));
+                }
             }
         }
+
         if (rep == "true"){
             repeatable = true;
         }

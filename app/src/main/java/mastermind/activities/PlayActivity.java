@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lf.mastermind.R;
 
 import java.util.Arrays;
@@ -18,7 +20,7 @@ import mastermind.Mastermind;
 import mastermind.Peg;
 import mastermind.services.SettingsSaveStateService;
 
-public class PlayActivity extends Activity {
+public class PlayActivity extends AppCompatActivity {
     int active_row = 0;
     GameLogic gameLogic;
     Gamestate gamestate;
@@ -240,6 +242,13 @@ public class PlayActivity extends Activity {
         }
             pegs[8]=gameLogic.getSolution();
 
+        //set the evaluation pins
+        for (int i = 0; i < active_row; i++) {
+            int[] bw = gameLogic.evaluateBW(pegs[i]);
+
+            drawEval(bw, i);
+        }
+
 
     }
 
@@ -368,7 +377,7 @@ public class PlayActivity extends Activity {
                     }
                 }
             }
-            if(active_row == column && pegs[row][column].isActive()){
+            if(active_row == row && pegs[row][column].isActive()){
                 removePeg(row, column);
             }
 
@@ -378,6 +387,7 @@ public class PlayActivity extends Activity {
     private void removePeg(int row, int column) {
         pegs[row][column].setActive(false);
         setPeg_element(row, column, 6);
+        basepegs[pegs[row][column].getpColor()].setActive(true);
     }
 
 
