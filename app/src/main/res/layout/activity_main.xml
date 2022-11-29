@@ -10,12 +10,12 @@
         android:id="@+id/main_darkmode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
+        android:layout_marginTop="-10dp"
         android:layout_marginEnd="133dp"
         android:text="@string/main_darkmode"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/main_repeatable"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/main_repeatable"
         app:layout_constraintTop_toBottomOf="@+id/main_repeatable" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="133dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="-10dp"
         android:layout_marginEnd="133dp"
         android:text="@string/main_repeat_colors"
         app:layout_constraintEnd_toEndOf="parent"
