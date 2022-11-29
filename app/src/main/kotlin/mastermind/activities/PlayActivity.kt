@@ -343,12 +343,18 @@ class PlayActivity : AppCompatActivity() {
         showSolution()
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     private fun showSolution() {
         for (i in pegs[8].indices) {
-            solutionView[i]!!.setImageDrawable(resources.getDrawable(Colormapping.pPegs[pegs[8][i]!!.getpColor()], theme))
+            solutionView[i]!!.setImageDrawable(ResourcesCompat.getDrawable(resources, Colormapping.pPegs[pegs[8][i]!!.getpColor()], theme))
         }
     }
+
+    private fun hideSolution(){
+        for (i in pegs[8].indices) {
+            solutionView[i]!!.setImageDrawable(ResourcesCompat.getDrawable(resources, Colormapping.pPegs[6], theme))
+        }
+    }
+
 
     private fun pegsToString(): String {
         val savestring = StringBuilder()
@@ -416,6 +422,7 @@ class PlayActivity : AppCompatActivity() {
                 activeRow = i
                 break
             }
+
         }
 
         //set pegs from gamestate
@@ -436,6 +443,9 @@ class PlayActivity : AppCompatActivity() {
         }
 
         pegs[8] = gameLogic!!.solution
+
+        //reset sol
+        hideSolution()
 
         //reset Eval
         for (evalbox in evals) {
