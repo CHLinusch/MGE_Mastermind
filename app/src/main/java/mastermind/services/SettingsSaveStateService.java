@@ -9,6 +9,7 @@ public class SettingsSaveStateService {
     private static final String LANGUAGE = "language";
     private static final String REPEAT_COLORS = "repeatable";
     private static final String EMPTY = "none";
+    private static final String DARKMODE = "darkmode";
     private static SharedPreferences preferences;
 
     public static void initialize(Context context) {
@@ -57,5 +58,12 @@ public class SettingsSaveStateService {
         saveGame(savestring);
         saveRepeatColors(repeatable);
 
+    }
+
+    public static boolean isDarkmodeOn(){
+        return "true".equals(preferences.getString(DARKMODE, EMPTY));
+    }
+    public static void saveDarkmode(boolean isDarkmode){
+        preferences.edit().putString(DARKMODE, isDarkmode?"true":"false").apply();
     }
 }

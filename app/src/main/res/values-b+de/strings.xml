@@ -6,5 +6,5 @@
     <string name="main_language">Sprache</string>
     <string name="main_language_en">English</string>
     <string name="main_language_de">Deutsch</string>
-
+    <string name="main_darkmode">Dunkler Modus</string>
 </resources>

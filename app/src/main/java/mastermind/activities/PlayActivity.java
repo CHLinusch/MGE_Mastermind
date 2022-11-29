@@ -1,7 +1,6 @@
 package mastermind.activities;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +15,7 @@ import java.util.Arrays;
 
 import mastermind.GameLogic;
 import mastermind.Gamestate;
-import mastermind.Mastermind;
+import mastermind.Colormapping;
 import mastermind.Peg;
 import mastermind.services.SettingsSaveStateService;
 
@@ -70,25 +69,22 @@ public class PlayActivity extends AppCompatActivity {
         if (Arrays.equals(solution, new int[]{6, 6, 6, 6})) {
             gameLogic = new GameLogic(gamestate.isRepeatable());
         } else {
-            gameLogic = new GameLogic(solution, gamestate.isRepeatable());
+            gameLogic = new GameLogic(solution);
         }
 
 
         active_row = 0;
         int[][] pegs_ints = gamestate.getPlacedPegs();
-        for (int i = 0; i < pegs_ints.length - 1; i++) {
+        for (int i = 0; i < pegs_ints.length - 1; i++)
             if (Arrays.equals(pegs_ints[i], new int[]{6, 6, 6, 6})) {
                 active_row = i;
                 break;
             }
-        }
 
         Button restart_btn = findViewById(R.id.play_restart);
-        restart_btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                restart();
-            }
-        });
+        restart_btn.setOnClickListener(v -> restart());
+        Button back_btn = findViewById(R.id.play_back);
+        back_btn.setOnClickListener(v -> finish());
 
         basepeg0 = findViewById(R.id.play_peg_base_1);
         basepeg1 = findViewById(R.id.play_peg_base_2);
@@ -339,9 +335,10 @@ public class PlayActivity extends AppCompatActivity {
         showSolution();
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void showSolution() {
         for (int i = 0; i < pegs[8].length; i++) {
-            solution_view[i].setImageDrawable(getResources().getDrawable(Mastermind.pPegs[pegs[8][i].getpColor()], getTheme()));
+            solution_view[i].setImageDrawable(getResources().getDrawable(Colormapping.pPegs[pegs[8][i].getpColor()], getTheme()));
         }
     }
 
@@ -361,11 +358,11 @@ public class PlayActivity extends AppCompatActivity {
     private void drawEval(int[] bw, int row) {
         int counter = 0;
         for (int i = 0; i < bw[0]; i++) {
-            evals[row][i].setImageDrawable(getResources().getDrawable(Mastermind.sPegs[0]));
+            evals[row][i].setImageDrawable(getResources().getDrawable(Colormapping.sPegs[0]));
             counter++;
         }
         for (int i = 0; i < bw[1]; i++) {
-            evals[row][counter + i].setImageDrawable(getResources().getDrawable(Mastermind.sPegs[1]));
+            evals[row][counter + i].setImageDrawable(getResources().getDrawable(Colormapping.sPegs[1]));
         }
     }
 
@@ -399,7 +396,7 @@ public class PlayActivity extends AppCompatActivity {
 
     private void setPeg_element(int row, int column, int color) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            pegbuttons[row][column].setForeground(getResources().getDrawable(Mastermind.pPegs[color], getTheme()));
+            pegbuttons[row][column].setForeground(getResources().getDrawable(Colormapping.pPegs[color], getTheme()));
         }
 
     }
@@ -441,8 +438,10 @@ public class PlayActivity extends AppCompatActivity {
         //reset Eval
         for(ImageView[] evalbox : evals){
             for (ImageView evalpeg : evalbox){
-                evalpeg.setImageDrawable(getResources().getDrawable(Mastermind.sPegs[2]));
+                evalpeg.setImageDrawable(getResources().getDrawable(Colormapping.sPegs[2]));
             }
         }
     }
+
+
 }

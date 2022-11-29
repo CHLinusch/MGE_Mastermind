@@ -6,6 +6,20 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/play_back"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="-10dp"
+        android:backgroundTint="#00FFFFFF"
+        app:icon="@android:drawable/ic_media_rew"
+        app:iconGravity="textStart"
+        app:iconTint="#000000"
+        app:layout_constraintStart_toStartOf="@+id/play_restart"
+        app:layout_constraintTop_toBottomOf="@+id/play_restart"
+        app:strokeColor="#000000"
+        app:strokeWidth="3dp" />
+
+    <Button
         android:id="@+id/play_peg_base_1"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="49dp"

@@ -1,10 +1,8 @@
 package mastermind;
 
-import java.util.Objects;
-
 public class Gamestate {
-    private int[][] placedPegs;
-    private boolean repeatable;
+    private final int[][] placedPegs;
+    private final boolean repeatable;
 
     public Gamestate(String saveState, String rep){
         String[] boxStates = saveState.split(" ");
@@ -18,12 +16,7 @@ public class Gamestate {
             }
         }
 
-        if ("true".equals(rep)){
-            repeatable = true;
-        }
-        else{
-            repeatable = false;
-        }
+        repeatable = "true".equals(rep);
     }
 
 

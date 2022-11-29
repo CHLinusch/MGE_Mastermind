@@ -1,21 +1,12 @@
 package mastermind;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
-import java.util.Arrays;
-
 public class GameLogic {
     static final int PEG_NR = 6;
     static final int PEGS_PER_ROW = 4;
     private final Peg[] solution = new Peg[PEGS_PER_ROW];
-    private final boolean repeatable;
 
 
     public GameLogic(boolean repeate) {
-        repeatable = repeate;
-        int[] usedPegs = new int[0];
         for (int i = 0; i < PEGS_PER_ROW; i++) {
             boolean skip = false;
             int next_peg_nr = (int) (Math.random() * PEG_NR);
@@ -33,8 +24,7 @@ public class GameLogic {
         }
 
     }
-    public GameLogic(int[] sol, boolean repeat){
-        repeatable = repeat;
+    public GameLogic(int[] sol){
         for (int i = 0; i < sol.length; i++){
             solution[i]=new Peg(sol[i]);
         }
@@ -51,7 +41,7 @@ public class GameLogic {
             }
         }
         for (int i = 0; i < pegs.length; i++) {
-            if (used[i] == false) {
+            if (!used[i]) {
                 for (int j = 0; j < pegs.length; j++) {
                     if (solution[j].isActive() &&solution[j].equals(pegs[i])) {
                         black_white[1] += 1;
