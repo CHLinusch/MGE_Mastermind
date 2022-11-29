@@ -14,13 +14,12 @@ This project aims for at least the following points:
 
 - Persistence: At least 1
 
-- Sensors: 1
-
 - Localisation: 1 (EN/DE)
 
 - Styles: 1
 
-- Additional Layout: 1
+- Kotlin: 3
+
 
 
 
