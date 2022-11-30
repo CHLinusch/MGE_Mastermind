@@ -13,10 +13,10 @@
         android:backgroundTint="#00FFFFFF"
         app:icon="@android:drawable/ic_media_rew"
         app:iconGravity="textStart"
-        app:iconTint="#000000"
+        app:iconTint="?attr/colorOnSecondary"
         app:layout_constraintStart_toStartOf="@+id/play_restart"
         app:layout_constraintTop_toBottomOf="@+id/play_restart"
-        app:strokeColor="#000000"
+        app:strokeColor="?attr/colorOnSecondary"
         app:strokeWidth="3dp" />
 
     <Button
@@ -665,6 +665,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="96dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -676,6 +677,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box1"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -687,6 +689,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box2"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -698,6 +701,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box3"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -709,6 +713,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box4"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -720,6 +725,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box5"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -731,6 +737,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box6"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -742,6 +749,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="9dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toTopOf="@+id/play8_box7"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -753,6 +761,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="76dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rectangle"
@@ -1082,6 +1091,7 @@
         android:id="@+id/play_evalbox1"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box1"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1090,6 +1100,7 @@
         android:id="@+id/play_evalbox2"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box2"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1098,6 +1109,7 @@
         android:id="@+id/play_evalbox3"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box3"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1106,6 +1118,7 @@
         android:id="@+id/play_evalbox4"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box4"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1114,6 +1127,7 @@
         android:id="@+id/play_evalbox5"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box5"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1122,6 +1136,7 @@
         android:id="@+id/play_evalbox6"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box6"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1130,6 +1145,7 @@
         android:id="@+id/play_evalbox7"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box7"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1138,6 +1154,7 @@
         android:id="@+id/play_evalbox8"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        app:tint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box8"
         app:layout_constraintStart_toEndOf="@+id/play8_box2"
         app:srcCompat="@drawable/rectangle" />
@@ -1189,10 +1206,10 @@
         android:layout_marginStart="9dp"
         android:backgroundTint="#00FFFFFF"
         app:icon="@drawable/restart"
-        app:iconTint="#000000"
+        app:iconTint="?attr/colorOnSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/play8_box_sol"
         app:layout_constraintStart_toEndOf="@+id/play8_box_sol"
-        app:strokeColor="#000000"
+        app:strokeColor="?attr/colorOnSecondary"
         app:strokeWidth="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
