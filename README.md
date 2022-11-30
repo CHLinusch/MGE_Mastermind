@@ -71,4 +71,4 @@ This project aims for at least the following points:
 
 1.0: First release
 
-0.6 A lot of bugfixes
+
