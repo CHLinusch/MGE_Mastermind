@@ -15,7 +15,6 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.content.res.ResourcesCompat
 import java.lang.StringBuilder
-import java.util.*
 
 class PlayActivity : AppCompatActivity() {
     private var activeRow = 0
