@@ -1,5 +1,5 @@
-#MGE Mastermind
-# Description
+# MGE Mastermind
+## Description
 This application is for playing the game "Mastermind" where you have to find out the correct color and order of pins.
 Two modes can be chosen (repeatable and non repeatable colors).
 
@@ -47,7 +47,7 @@ This project aims for at least the following points:
 |Total|7-8|
 
 
-# Version History:
+## Version History:
 
 0.1: Pegs, Game Evaluation Logic
 
