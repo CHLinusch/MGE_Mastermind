@@ -36,21 +36,19 @@ It is available currently in two languages: English and German. It is written in
 
 
 # Points
+
+
+## Points
 This project aims for at least the following points:
 
-
-
-- Functionality: 1-2
-
-- Persistence: At least 1
-
-- Localisation: 1 (EN/DE)
-
-- Styles: 1
-
-- Kotlin: 3
-
-
+|Feature|Points|
+|-|-|
+|Using Kotlin |3|
+|Functionality |1-2|
+|Localisation en-de|1|
+|Persistence|1|
+|Dark theme|1|
+|Total|7-8|
 
 
 # Version History:
