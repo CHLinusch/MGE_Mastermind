@@ -34,10 +34,6 @@ It is available currently in two languages: English and German. It is written in
 
 <figure><img src="https://user-images.githubusercontent.com/91124387/204900154-083f0af7-81a2-4385-9e9d-cc77b3ba71b2.png" style="width:20%"><figcaption align = "center"><b>Dark mode German menu</b></figcaption></figure>
 
-
-# Points
-
-
 ## Points
 This project aims for at least the following points:
 
