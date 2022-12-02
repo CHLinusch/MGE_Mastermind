@@ -1,3 +1,4 @@
+Made By: Linus Flury for Mobile & Gui Engineering HS 2022
 # MGE Mastermind
 ## Description
 This application is for playing the game "Mastermind" where you have to find out the correct color and order of pins.
