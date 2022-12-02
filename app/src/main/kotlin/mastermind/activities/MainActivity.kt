@@ -1,13 +1,11 @@
 package mastermind.activities
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import com.lf.mastermind.R
 import mastermind.services.SettingsSaveStateService
 import androidx.appcompat.app.AppCompatDelegate
 import android.content.Intent
-import android.content.res.Configuration
 import android.widget.*
 import java.util.*
 

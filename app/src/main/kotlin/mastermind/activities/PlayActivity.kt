@@ -9,7 +9,6 @@ import com.lf.mastermind.R
 import android.annotation.SuppressLint
 import mastermind.services.SettingsSaveStateService
 import mastermind.Colormapping
-import android.os.Build
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -401,9 +400,7 @@ class PlayActivity : AppCompatActivity() {
     }
 
     private fun pegElement(row: Int, column: Int, color: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            pegbuttons[row][column]!!.foreground = ResourcesCompat.getDrawable(resources, Colormapping.pPegs[color], theme)
-        }
+        pegbuttons[row][column]!!.foreground = ResourcesCompat.getDrawable(resources, Colormapping.pPegs[color], theme)
     }
 
     private fun restart() {

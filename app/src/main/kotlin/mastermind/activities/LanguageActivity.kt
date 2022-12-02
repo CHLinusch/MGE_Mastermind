@@ -18,7 +18,7 @@ open class LanguageActivity: AppCompatActivity() {
     private fun updateConfig(wrapper: ContextThemeWrapper) {
         if(dLocale==null)  // Do nothing if dLocale is null
             return
-        Locale.setDefault(dLocale)
+        dLocale?.let { Locale.setDefault(it) }
         val configuration = Configuration()
         configuration.setLocale(dLocale)
         wrapper.applyOverrideConfiguration(configuration)
