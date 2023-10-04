@@ -1,4 +1,6 @@
 Made By: Linus Flury for Mobile & Gui Engineering HS 2022
+
+Last Java Version: https://github.com/CHLinusch/MGE_Mastermind/tree/bbe832ed3b4fe160a3d517b628823bf267f91b3f
 # MGE Mastermind
 ## Description
 This application is for playing the game "Mastermind" where you have to find out the correct color and order of pins.
